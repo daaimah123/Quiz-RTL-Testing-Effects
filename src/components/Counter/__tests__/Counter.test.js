@@ -4,29 +4,34 @@ import { render, fireEvent, cleanup } from '@testing-library/react';
 
 afterEach(cleanup);
 
-test('count starts with 0', () => {
-  // Set a rendered `Counter` component to a deconstructed `getByTestId`.
-  // Verify that the node with id "count" has content text of "Clicked 0 time".
-});
+// 1️⃣ Count starts with 0 and button is disabled
+// - Render the Counter component
+// - Find the count and button elements
+// - Assert that the count starts at 0
+// - Assert that the button is disabled initially
 
-test('clicking on button increments counter', () => {
-  // Set a rendered `Counter` component to a deconstructed `getByText` and `getByTestId.
-  // Simulate a click event on the button with text "Increment".
-  // Verify that the node with id "count" has content text of "Clicked 1 time".
-  // Simulate a click event on the button with text "Increment".
-  // After the second button click, verify that the node with id "count" has content text of "Clicked 2 time".
-});
+// 2️⃣ Checking the checkbox enables the button
+// - Render the Counter component
+// - Find the button and checkbox elements
+// - Verify the button is initially disabled
+// - Click the checkbox to check it
+// - Verify the button is now enabled
 
-test('window title changes after every increment if checkbox is checked', () => {
-  // Set the browser window title to "My Awesome App".
-  // Set a rendered `Counter` component to a deconstructed `getByText` and `getByLabelText`.
-  // Simulate a click event on button text "Increment".
-  // Verify that the browser window title is "My Awesome App".
-  // Set checkmark label text to the variable checkbox.
-  // Simulate a click event on checkmark box with the previous checkbox variable label text.
-  // Verify that the browser window title is changed to "Total number of clicks: 1" upon the initial checkbox click event.
-  // Simulate a second click event on button text "Increment".
-  // Verify that the browser window title is changed to "Total number of clicks: 2" upon the initial checkbox click event.
-  //  Simulate a click event (to unclick) on the checkmark box with the previous checkbox variable label text.
-  // Verify that the browser window title is changed back to "My Awesome App" following click event (unclicking of the checkbox).
-});
+// 3️⃣ Clicking enabled button increments counter
+// - Render the Counter component
+// - Find all necessary elements
+// - Enable the button by checking the checkbox
+// - Click the button once
+// - Verify the count is now 1 (singular form)
+// - Click the button again
+// - Verify the count is now 2 (plural form)
+
+// 4️⃣ Document title updates when checkbox is checked
+// - Set up initial document title
+// - Render the Counter component
+// - Find the button and checkbox elements
+// - Check the checkbox
+// - Verify title shows initial count of 0
+// - Click the button to increment counter
+// - Verify title updates to show count of 1
+// - Uncheck the checkbox
