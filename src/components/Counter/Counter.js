@@ -1,33 +1,29 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Button from '../Button/Button';
+import React, { useState, useEffect, useRef } from "react";
 
 function Counter() {
-  const [count, setCount] = useState(0);
-  const [checked, setChecked] = useState(false);
-  const initialTitleRef = useRef(document.title);
+  const [count, setCount] = useState(0)
+  const [checked, setChecked] = useState(false)
+  const initialTitleRef = useRef(document.title)
 
   useEffect(() => {
-    document.title = checked 
-      ? `Total number of clicks: ${count}` 
-      : initialTitleRef.current;
-  }, [checked, count]);
+    document.title = checked ? `Total number of clicks: ${count}` : initialTitleRef.current
+  }, [checked, count])
 
   return (
     <div>
-      <span data-testid="count">Clicked {count} time{count === 1 ? "" : "s"}</span>
+      <span data-testid="count">
+        Clicked {count} time{count === 1 ? "" : "s"}
+      </span>
       <br />
-      <Button onClick={() => setCount(count + 1)} text="Increment" />
+      <button data-testid="button" onClick={() => setCount(count + 1)}>
+        Increment
+      </button>
       <div>
-        <input 
-          type="checkbox" 
-          id="checkbox-title" 
-          checked={checked}
-          onChange={e => setChecked(e.target.checked)}
-        />
+        <input type="checkbox" id="checkbox-title" checked={checked} onChange={(e) => setChecked(e.target.checked)} />
         <label htmlFor="checkbox-title">Check to display count in document title</label>
       </div>
     </div>
-  );
+  )
 }
 
-export default Counter;
+export default Counter

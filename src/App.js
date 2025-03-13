@@ -20,7 +20,7 @@ function App() {
                 component={<Counter />}
                 title="Testing Effects"
             />
-
+            You are a boss!
         </div>
     );
 }
