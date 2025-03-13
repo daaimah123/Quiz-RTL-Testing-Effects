@@ -15,12 +15,18 @@ function Counter() {
         Clicked {count} time{count === 1 ? "" : "s"}
       </span>
       <br />
-      <button data-testid="button" onClick={() => setCount(count + 1)}>
+      <button data-testid="button" onClick={() => setCount(count + 1)} disabled={!checked}>
         Increment
       </button>
       <div>
-        <input type="checkbox" id="checkbox-title" checked={checked} onChange={(e) => setChecked(e.target.checked)} />
-        <label htmlFor="checkbox-title">Check to display count in document title</label>
+        <input
+          type="checkbox"
+          id="checkbox-title"
+          checked={checked}
+          onChange={(e) => setChecked(e.target.checked)}
+          data-testid="checkbox"
+        />
+        <label htmlFor="checkbox-title">Check to to enable or disable button</label>
       </div>
     </div>
   )

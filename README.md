@@ -22,25 +22,36 @@ npm run test
 - `jest.useFakeTimers` when simulating checkbox action, even though the component has `onChange` callback
 - Before setting up your test suites, you should use `afterEach(cleanup)` (after imports) in order to unmount any React trees that were mounted with render
 
-### Create Three Tests for Counter Component
+### Create Four Tests for Counter Component
 
-1️⃣ Count starts with 0
+1️⃣ Count starts with 0 and button is disabled
 - Render the Counter component
-- Find the element that displays the count using its test ID
-- Assert that the count element displays the initial value of 0
+- Find the count and button elements
+- Assert that the count starts at 0
+- Assert that the button is disabled initially
 
-2️⃣ Clicking on button increments counter
+2️⃣ Checking the checkbox enables the button
 - Render the Counter component
-- Find the button element by its text content
-- Find the count display element by its test ID
-- Simulate a click on the button
-- Assert that the count has increased to 1 and uses singular form
-- Simulate another click on the button
-- Assert that the count has increased to 2 and uses plural form
+- Find the button and checkbox elements
+- Verify the button is initially disabled
+- Click the checkbox to check it
+- Verify the button is now enabled
 
-3️⃣ Multiple button clicks increment counter correctly
+3️⃣ Clicking enabled button increments counter
 - Render the Counter component
-- Find the button element by its text content
-- Find the count display element by its test ID
-- Simulate multiple clicks on the button (5 times)
-- Assert that the count has increased to 5
+- Find all necessary elements
+- Enable the button by checking the checkbox
+- Click the button once
+- Verify the count is now 1 (singular form)
+- Click the button again
+- Verify the count is now 2 (plural form)
+
+4️⃣ Document title updates when checkbox is checked
+- Set up initial document title
+- Render the Counter component
+- Find the button and checkbox elements
+- Check the checkbox
+- Verify title shows initial count of 0
+- Click the button to increment counter
+- Verify title updates to show count of 1
+- Uncheck the checkbox
