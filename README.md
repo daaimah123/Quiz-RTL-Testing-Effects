@@ -1,6 +1,6 @@
 # RTL Testing Effects
 
-## Add GIF of expected behavior here!!!
+![fetch rtl effects](https://github.com/user-attachments/assets/17e006b4-bea0-4e2b-a543-c5ec11109c76)
 
 ### Helpful Tips to Get You Started
 
