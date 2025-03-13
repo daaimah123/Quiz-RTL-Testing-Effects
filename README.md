@@ -23,7 +23,7 @@ npm run test
 - Before setting up your test suites, you should use `afterEach(cleanup)` (after imports) in order to unmount any React trees that were mounted with render
 
 
-### Create Three Tests for Counter Component
+### Create Four Tests for Counter Component
 
 1️⃣ Count starts with 0 and button is disabled
 - Render the Counter component
