@@ -7,9 +7,6 @@ const Scenario = props => (
     <div className="code-container">
       {props.component}
     </div>
-    {/* <div className="code-link">
-      <a href={props.codeURL}>Check the code in GitHub</a>
-    </div> */}
     {props.snippet}
   </div>
 );
